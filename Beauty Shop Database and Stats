@@ -1,0 +1,60 @@
+CREATE TABLE Beauty_Shop  
+(ID integer primary key, name text, price INTEGER, rating INTEGER, aisle INTEGER);
+
+INSERT INTO Beauty_Shop 
+VALUES (1, "Lipstick", 5.99, 8, 1);
+
+INSERT INTO Beauty_Shop 
+VALUES (2, "Brush", 2.50, 6, 2);
+
+INSERT INTO Beauty_Shop 
+VALUES (3, "Hair Serum", 9.50, 8, 2);
+
+INSERT INTO Beauty_Shop 
+VALUES (4, "Nails", 10.50, 7, 3);
+
+INSERT INTO Beauty_Shop 
+VALUES (5, "Lotion", 7.99, 8, 4);
+
+INSERT INTO Beauty_Shop 
+VALUES (6, "Clips", 3.99, 7, 2);
+
+INSERT INTO Beauty_Shop 
+VALUES (7, "Gems", 2.99, 5, 3);
+
+INSERT INTO Beauty_Shop 
+VALUES (8, "Eyeshadow", 9.50, 6, 1);
+
+INSERT INTO Beauty_Shop 
+VALUES (9, "Gloss", 12.99, 10, 1);
+
+INSERT INTO Beauty_Shop 
+VALUES (10, "Concealer", 5.99, 5, 1);
+
+INSERT INTO Beauty_Shop 
+VALUES (11, "Hair Gel", 3.99, 4, 2);
+
+INSERT INTO Beauty_Shop 
+VALUES (12, "Hair Dye", 15.50, 9, 2);
+
+INSERT INTO Beauty_Shop 
+VALUES (13, "Body Butter", 8.99, 9, 4);
+
+INSERT INTO Beauty_Shop 
+VALUES (14, "Perfume", 20.99, 10, 4);
+
+INSERT INTO Beauty_Shop 
+VALUES (15, "Curling Iron", 30.99, 8, 2);
+
+--display the database ordered by price.
+SELECT * FROM Beauty_Shop
+ORDER BY PRICE;
+
+--which items have a rating greater than 7? 
+SELECT * FROM Beauty_Shop
+WHERE rating > 7;
+
+--what is the average price of items sold in aisle 2?
+SELECT AVG(price)
+FROM Beauty_Shop 
+WHERE aisle = 2;
