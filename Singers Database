@@ -1,0 +1,57 @@
+CREATE TABLE singers (id INTEGER PRIMARY KEY AUTOINCREMENT, full_name text, age integer);
+
+INSERT INTO singers (full_name, age) VALUES ("Christina Aguilera", 42);
+
+INSERT INTO singers (full_name, age) VALUES ("Britney Spears", 41);
+
+INSERT INTO singers (full_name, age) VALUES ("Beyonce", 41);
+
+INSERT INTO singers (full_name, age) VALUES ("Taylor Swift", 33);
+
+INSERT INTO singers (full_name, age) VALUES ("Lady Gaga", 37);
+
+INSERT INTO singers (full_name, age) VALUES ("Katy Perry", 38);
+
+CREATE TABLE home_town (id INTEGER PRIMARY KEY AUTOINCREMENT, full_name text, home_town text, coast text);
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Christina Aguilera", "Staten Island New York", "East");
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Britney Spears", "McComb Mississippi", "East");
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Beyonce", "Houston Texas", "West");
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Taylor Swift", "Reading Pennsylvania", "East");
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Lady Gaga", "New York City New York", "East");
+
+INSERT INTO home_town (full_name, home_town, coast) VALUES ("Katy Perry", "Santa Barbara California", "West");
+
+CREATE TABLE grammys (id INTEGER PRIMARY KEY AUTOINCREMENT, full_name text, grammys_won integer); 
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Christina Aguilera", 5);
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Britney Spears", 1);
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Beyonce", 29);
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Taylor Swift", 12);
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Lady Gaga", 13);
+
+INSERT INTO grammys (full_name, grammys_won) VALUES ("Katy Perry", 0);
+
+--which singers won 5 or more grammys?
+SELECT * FROM grammys WHERE grammys_won >=5
+ORDER BY grammys_won asc;
+
+--display the singers from the east coast as well as their age.
+SELECT singers.full_name, age, home_town.coast FROM singers JOIN home_town ON singers.id = home_town.id
+WHERE coast = "East";
+
+--sort the singers from oldest to youngest.
+SELECT * FROM singers
+ORDER BY age desc;
+
+
+
+
