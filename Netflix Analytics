@@ -1,4 +1,4 @@
-#In this SQL code, I'm querying a database that holds Nexflix data to answer questions about particular data.
+#In this SQL code, I'm querying a database that holds Netflix data.
 
 #1. How many movie titles are there in the database? (movies only, not tv shows) 
 select count(*) 
